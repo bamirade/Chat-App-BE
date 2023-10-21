@@ -66,6 +66,22 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.835.0)
+    aws-sdk-core (3.185.1)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.5)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-kms (1.72.0)
+      aws-sdk-core (~> 3, >= 3.184.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.136.0)
+      aws-sdk-core (~> 3, >= 3.181.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.6)
+    aws-sigv4 (1.6.0)
+      aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.19)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
@@ -81,6 +97,10 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    ffi (1.16.3)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -89,6 +109,7 @@ GEM
     irb (1.8.3)
       rdoc
       reline (>= 0.3.8)
+    jmespath (1.6.2)
     jwt (2.7.1)
     loofah (2.21.4)
       crass (~> 1.0.2)
@@ -165,6 +186,9 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    webp-ffi (0.4.0)
+      ffi (>= 1.9.0)
+      ffi-compiler (>= 0.1.2)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -174,6 +198,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aws-sdk-s3
   bcrypt
   bootsnap
   debug
@@ -185,6 +210,7 @@ DEPENDENCIES
   rails (~> 7.0.8)
   sqlite3 (~> 1.4)
   tzinfo-data
+  webp-ffi
 
 RUBY VERSION
    ruby 3.2.2p53
